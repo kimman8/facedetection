@@ -1,19 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>If Statements</title>
+    <link rel="stylesheet" href="../base.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>If Statements</title>
-  <link rel="stylesheet" href="../base.css">
-</head>
+  <body>
+    <script>
+      if (10 > 2) {
+        console.log('Yep');
+      }
 
-<body>
-  <script>
-    if (10 > 2) {
-      console.log('Yep');
-    }
-  </script>
-</body>
+      function slugify(sentence, lowercase) {
+        if (lowercase) {
+          return sentence.replace(/\s/g, '-').toLowerCase();
+        }
+        return sentence.replace(/\s/g, '-');
+      }
 
+      const values = [
+        [],
+        {},
+        -10,
+        1,
+        0,
+        '',
+        ' ',
+        'a full fkn string cuz',
+        undefined,
+        null,
+        NaN, //袁俊杰你好吗， 对呀！
+      ];
+      console.group('truthy or falsy values');
+      values.forEach(value => {
+        if (value) {
+          console.log(value, ' is truthy');
+        } else {
+          console.log(value, ' is falsy');
+        }
+      });
+      console.groupEnd();
+      console.clear();
+
+      const isCool = true;
+      if (!isCool) {
+        console.log('you are not cool');
+      }
+      //ternary
+      // const count = 0;
+      // let word;
+      // if (count === 1) {
+      //   word = 'item';
+      // } else {
+      //   word = 'items';
+      // }
+      // const sentence = `you have ${count} ${word} in your cart.`;
+
+      //1.condition
+      //2.what to do if true
+      //3.what to do if false
+      const count = 4;
+      const word = count === 1 ? 'item' : 'items';
+
+      function showAdminBar() {
+        console.log('showin admin bar');
+      }
+      const isAdmin = false;
+      isAdmin ? showAdminBar() : null;
+
+      //AND AND TRICK!
+      function check1() {
+        console.log('running check 1');
+        return true;
+      }
+
+      function check2() {
+        console.log('running check 2');
+        return false;
+      }
+
+      function check3() {
+        console.log('running check 3');
+        return true;
+      }
+
+      if (check1() && check2() && check3()) {
+        console.log('all checks pass');
+      } else {
+        console.log('some checks failed');
+      }
+    </script>
+  </body>
 </html>

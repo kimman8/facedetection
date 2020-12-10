@@ -9,7 +9,53 @@
 
   <body>
     <script>
-      const x = 'fuck';
+      const names = ['kim', 'wes', 'pete'];
+
+      const bikes = ['bianchi', 'yamaha', 'suzuki', 'mile', 'panasonic'];
+      const newBikes = [...bikes.slice(0, 2), 'benneto', ...bikes.slice(2)];
+      console.log(newBikes);
+      const newbikes2 = [...bikes.slice(0, 3), ...bikes.slice(4)];
+      // // //mutation method - THEY DO CHANGE DA ORIGINAL DATA
+      const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      console.log(numbers);
+      numbers.slice(3, 2);
+      console.log(numbers);
+
+      const comments = [
+        { text: 'cool beans', id: 123 },
+        { text: 'fuck yeee', id: 124 },
+        { text: 'puuuuusss', id: 125 },
+        { text: 'fuck shit up', id: 126 },
+        { text: 'ma body weight warriors', id: 127 },
+      ];
+
+      function deleteComment(id, comments) {
+        //first find the index of da item in da array
+        const commentIndex = comments.findIndex(comment => comment.id === id);
+        return [
+          ...comments.slice(0, commentIndex),
+          ...comments.slice(commentIndex + 1),
+        ];
+        //make new array without that item in it
+        //return our new array
+      }
+
+      const kaitIndex = names.findIndex(name => name === 'kim');
+      const newNamesWithoutKait = [
+        ...names.slice(0, kaitIndex),
+        ...names.slice(kaitIndex + 1),
+      ];
+
+      console.log(newNamesWithoutKait);
+      console.log(kaitIndex);
+      // // const numbersBackwards = numbers.reverse();
+      // // console.log(numbersBackwards);
+      // const numbersReversed = [...numbers];
+      // console.log(numbersReversed);
+      // numbersReversed.reverse();
+      // // //immutable method - THEY DONT CHANGE DA ORIGINAL DATA
+      // const pizzaSlice = numbers.slice(2, 4);
+      // console.log(pizzaSlice);
     </script>
   </body>
 </html>

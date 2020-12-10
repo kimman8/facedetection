@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Intervals and Timers</title>
+    <link rel="stylesheet" href="../base.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Intervals and Timers</title>
-  <link rel="stylesheet" href="../base.css">
-</head>
+  <body>
+    <script>
+      function demBUZZERS() {
+        console.log('EEEERNNNNGG!!!!');
+      }
 
-<body>
+      function setImmediateInterval(funcToRun, ms) {
+        //right away call that function
+        funcToRun();
+        //run a regular interval
+        return setInterval(funcToRun, ms);
+      }
 
-</body>
+      setImmediateInterval(demBUZZERS, 2000);
 
+      function sayHi() {
+        console.log('heyy');
+      }
+
+      setImmediateInterval(sayHi, 200);
+      function destroy() {
+        document.body.innerHTML = `<p>DESTROYED!</p>`;
+      }
+
+      const bombTimer = setTimeout(destroy, 5000);
+      console.log(typeof bombTimer);
+
+      window.addEventListener('click', function () {
+        console.log('you saved da fkn world yo!');
+        clearTimeout(bombTimer); //stop da timer from running
+      });
+
+      const poopInterval = setInterval(function () {
+        console.log('hehe');
+        console.log('poop');
+      }, 10);
+
+      // clearTimeout(poopInterval);
+
+      setTimeout(function () {
+        clearInterval(poopInterval);
+      }, 5000);
+    </script>
+  </body>
 </html>
