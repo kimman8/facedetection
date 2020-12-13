@@ -1,27 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>For Loops</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>For Loops</title>
-</head>
+  <body>
+    <script>
+      const numbers = [2, 34, 3, 23, 42, 3, 1, 65, 364, 5, 645, 6];
 
-<body>
-  <script>
-    const numbers = [2, 34, 3, 23, 42, 3, 1, 65, 364, 5, 645, 6];
+      const name = 'Wes Bos';
 
-    const name = 'Wes Bos';
+      const wes = {
+        name: 'wes',
+        age: 100,
+        cool: true,
+      };
 
-    // For
+      // For
+      for (let i = 0; i <= 10; i++) {
+        console.log(i);
+      }
+      // For of
+      for (const letter of name) {
+        console.log(letter);
+      }
 
-    // For of
+      for (const number of numbers) {
+        console.log(number);
+      }
+      // For in
+      //used for looping over da keys in a object
+      for (const prop in wes) {
+        console.log(prop);
+      }
 
-    // For in
+      const baseHumanStats = {
+        feet: 2,
+        arms: 2,
+        eyes: 2,
+        head: 1,
+      };
+      Human.prototype = baseHumanStats;
+      function Human(name) {
+        this.name = name;
+      }
 
-    // While Loop
-  </script>
-</body>
+      const wes2 = new Human('wes');
+      console.log(wes2);
 
+      console.log(Object.values(wes2));
+      for (const prop in wes2) {
+        console.log(prop);
+      }
+      // While Loop
+
+      let cool = true;
+      let i = 0;
+      while (cool === true) {
+        console.log('you are cool');
+        i++;
+        if (i > 100) {
+          cool = false;
+        }
+      }
+    </script>
+  </body>
 </html>
