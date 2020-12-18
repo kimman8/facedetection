@@ -1,0 +1,3 @@
+const video = document.querySelector('.webcam');
+const canva = document.querySelector('.video');
+const faceCanvas = document.querySelector('.face');

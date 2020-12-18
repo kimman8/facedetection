@@ -1,0 +1,3 @@
+document.querySelector('.webcam');
+document.querySelector('.video');
+document.querySelector('.face');

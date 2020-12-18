@@ -26,7 +26,7 @@ body {
 }
 
 .shopping-item {
-  padding: 1rem 0;
+  padding: 5rem 0;
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-gap: 1rem;
@@ -34,11 +34,11 @@ body {
   border-bottom: 1px solid var(--gray);
 }
 
-.shopping-item input[type="checkbox"] {
+.shopping-item input[type='checkbox'] {
   margin-right: 1rem;
 }
 
-.shopping-item input[type="checkbox"]:checked + .itemName {
+.shopping-item input[type='checkbox']:checked + .itemName {
   opacity: 0.5;
 }
 
